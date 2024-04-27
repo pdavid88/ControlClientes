@@ -5,7 +5,7 @@
         <title>Control Clientes</title>
     </head>
     <body>
-        <h1>Control Clientes</h1>
+        <header th:replace="layout/plantilla :: header"></header>
         <a th:href="@{/agregar}">Crear persona</a>
         <br/>
         <br/>
@@ -35,5 +35,6 @@
         <div th:if="${personas == null or personas.empty}">
             La lista de personas esta vacia
         </div>
+        <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>
