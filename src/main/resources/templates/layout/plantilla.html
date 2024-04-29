@@ -6,11 +6,11 @@
     </head>
     <body>
         <header th:fragment="header">
-            <h1>Control de Clientes</h1>
+            <h1 th:text="#{plantilla.titulo}"></h1>
         </header>
 
         <footer th:fragment="footer">
-            <p>© 2024 Derechos reservados</p>
+            <p>[[#{plantilla.pie-pagina}]]</p>
         </footer>
     </body>
 </html>
