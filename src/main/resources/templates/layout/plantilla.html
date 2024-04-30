@@ -16,9 +16,9 @@
             <div>
                 <br/>
                 <form method="post" th:action="@{/logout}">
-                    <b>User: </b> <span sec:authentication="name">Usuario que hizo login</span> |
+                    <b>User: </b> <span sec:authentication="name">Usuario actual</span> |
                     <b>Roles: </b> <span sec:authentication="principal.authorities">Roles</span> |
-                    <a href="#" onclick="this.parentNode.submit();">Cerrar sesion</a>
+                    <a href="#" onclick="this.parentNode.submit();">[[#{accion.logout}]]</a>
                 </form>
                 <br/>
                 <a th:href="@{/(lang=es)}">ES</a> |

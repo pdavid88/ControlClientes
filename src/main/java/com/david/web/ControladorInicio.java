@@ -24,7 +24,7 @@ public class ControladorInicio {
     @GetMapping("/")
     public String inicio(Model model, @AuthenticationPrincipal User user) {
         var personas = personaService.listarPersonas();
-        log.info("Usuario que hizo login: " + user);
+        log.info("Usuario actual: " + user);
         model.addAttribute("personas", personas);
         return "index";
     }
