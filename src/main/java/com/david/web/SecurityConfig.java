@@ -30,11 +30,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/webjars/**").permitAll()
                         .requestMatchers("/agregar/**", "/editar/**", "/eliminar").hasRole("ADMIN")
                         .requestMatchers("/").hasAnyRole("USER", "ADMIN")
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
+                        .defaultSuccessUrl("/", true)
                         .permitAll()
                 )
                 .exceptionHandling(exception -> exception
