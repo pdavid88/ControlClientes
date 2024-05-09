@@ -7,6 +7,7 @@
         <title>Plantilla</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.5.2/css/all.min.css}"/>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
 
@@ -43,20 +44,28 @@
                     </div>
                 </div>
             </nav>
+            <section id="main-header" class="py-2 bg-info text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1>
+                                <i class="fa-solid fa-gear"></i> [[#{plantilla.titulo}]]
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </header>
 
-        <footer th:fragment="footer">
-            <div>
-                <br/>
-                <form method="post" th:action="@{/logout}">
-                    <b>User: </b> <span sec:authentication="name">Usuario actual</span> |
-                    <b>Roles: </b> <span sec:authentication="principal.authorities">Roles</span> |
-                    <a href="#" onclick="this.parentNode.submit();">[[#{accion.logout}]]</a>
-                </form>
-                <br/>
-                <a th:href="@{/(lang=es)}">ES</a> |
-                <a th:href="@{/(lang=en)}">EN</a> |
-                <span>[[#{plantilla.pie-pagina}]]</span>
+        <footer th:fragment="footer" class="bg-warning text-white mt-5 p-5">
+            <div class="container">
+                <div class="col">
+                    <p class="lead text-center">
+                        <a th:href="@{/(lang=es)}">ES</a> |
+                        <a th:href="@{/(lang=en)}">EN</a> |
+                        <span>[[#{plantilla.pie-pagina}]] &copy;</span>
+                    </p>
+                </div>
             </div>
         </footer>
     </body>

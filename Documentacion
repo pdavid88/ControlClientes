@@ -1,0 +1,11 @@
+PROBLEMA - SOLUCIÓN
+
+ERRORES 403:
+1.Problema -> Al añadir al pom.xml las dependencias de "org.webjars" puede surgir el error por problemas de seguridad al acceder a dichas rutas.
+1.Solución -> En la clase SecurityConfig, en el método filterChain debemos permitir el acceso con la siguente línea de código:
+            .requestMatchers("/webjars/**").permitAll()
+
+2.Problema -> A veces, al hacer login (en mi caso solo con admin), puede fallar la redirección y llevarte a un 403.
+2.Solución -> En la clase SecurityConfig, en el método filterChain añadimos en "formLogin" la siguiente línea:
+            .defaultSuccessUrl("/", true)
+Esto hace que después de un inicio de sesión exitoso se redirigirá a los usuarios a esa ruta
