@@ -6,9 +6,19 @@
     <head th:replace="~{layout/plantilla :: head}">
         <title>Control Clientes</title>
     </head>
+
     <body>
-    <header th:replace="~{layout/plantilla :: header}"></header>
-    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/agregar}" th:text="#{persona.crear}"></a>
+        <header th:replace="~{layout/plantilla :: header}"></header>
+
+        <section th:replace="~{layout/botonesAgregar :: botonesAgregar}"></section>
+        <!--
+        <section th:replace="~{layout/agregarCliente :: agregarCliente}"></section>
+        <section th:replace="~{layout/listadoClientes :: listadoClientes}"></section>
+        -->
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+
+
+        <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/agregar}" th:text="#{persona.crear}"></a>
         <br sec:authorize="hasRole('ROLE_ADMIN')"/>
         <br sec:authorize="hasRole('ROLE_ADMIN')"/>
         <div th:if="${personas != null and !personas.empty}">
@@ -37,6 +47,6 @@
         <div th:if="${personas == null or personas.empty}">
             [[#{persona.lista-vacia}]]
         </div>
-        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+
     </body>
 </html>
