@@ -8,7 +8,7 @@ public interface IPersonaService {
 
     public List<Persona> listarPersonas();
 
-    public void guardar(Persona persona);
+    public Persona guardar(Persona persona);
 
     public void eliminar(Persona persona);
 

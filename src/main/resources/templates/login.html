@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="~{layout/plantilla :: head}">
     <title>Login</title>
 </head>
+
 <body>
-    <h1>Login</h1>
+    <header th:replace="~{layout/plantilla :: header}"></header>
 
-    <form method="post" th:action="@{/login}">
-        <label for="username">User:</label>
-        <input type="text" name="username" id="usermane"/>
-        <br/>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password"/>
-        <br/>
-        <br/>
-        <input type="submit" value="Login"/>
-    </form>
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Aqui se pueden agregar botones -->
+            </div>
+        </div>
+    </section>
 
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" th:action="@{/login}">
+                                <div class="form-group">
+                                    <label for="username">Username:</label>
+                                    <input type="text" name="username" id="username"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" id="password"/>
+                                </div>
+                                <input type="submit" value="Login" class="btn btn-primary w-100mt-3"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
 </body>
 </html>
