@@ -24,8 +24,16 @@ public class ControladorInicio {
     @GetMapping("/")
     public String inicio(Model model, @AuthenticationPrincipal User user) {
         var personas = personaService.listarPersonas();
-        log.info("Usuario actual: " + user);
+        log.info("Usuario actual: {}", user);
         model.addAttribute("personas", personas);
+        var saldoTotal = 0D;
+        for( var p: personas) {
+            saldoTotal += p.getSaldo();
+        }
+        model.addAttribute("saldoTotal", saldoTotal);
+        log.info("Saldo total calculado: {}", saldoTotal);
+
+        model.addAttribute("totalClientes", personas.size());
         return "index";
     }
 

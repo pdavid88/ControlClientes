@@ -27,6 +27,7 @@ public class HolaSpringApplication {
             persona.setApellido("Prueba");
             persona.setEmail("david@example.com");
             persona.setTelefono("123456789");
+            persona.setSaldo(150.5);
 
             // Guardar la persona
             personaPrueba = personaService.guardar(persona);
