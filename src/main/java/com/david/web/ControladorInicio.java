@@ -31,8 +31,6 @@ public class ControladorInicio {
             saldoTotal += p.getSaldo();
         }
         model.addAttribute("saldoTotal", saldoTotal);
-        log.info("Saldo total calculado: {}", saldoTotal);
-
         model.addAttribute("totalClientes", personas.size());
         return "index";
     }
