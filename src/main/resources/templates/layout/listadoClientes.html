@@ -4,8 +4,8 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
     <head>
-        <title>Listado Clientes</title>
         <meta charset="UTF-8">
+        <title>Listado Clientes</title>
     </head>
 
     <body>
@@ -35,12 +35,12 @@
                                             <td th:text="${persona.nombre + ' ' + persona.apellido}">Nombre Completo</td>
                                             <td th:text="${#numbers.formatDecimal(persona.saldo, 1, 'COMMA', 2, 'POINT')} + ' €'">Saldo</td>
                                             <td>
-                                                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editar/{id}(id=${persona.idPersona})}" class="btn btn-success">
+                                                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editar/{id}(id=${persona.idPersona})}" class="btn btn-secondary">
                                                     <i class="fa-solid fa-pen"></i> [[#{accion.editar}]]
                                                 </a>
                                             </td>
                                             <td>
-                                                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/eliminar(idPersona=${persona.idPersona})}" class="btn btn-danger">
+                                                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/eliminar(idPersona=${persona.idPersona})}" class="btn btn-dark">
                                                     <i class="fa-solid fa-trash"></i> [[#{accion.eliminar}]]
                                                 </a>
                                             </td>

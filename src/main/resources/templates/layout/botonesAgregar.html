@@ -4,8 +4,8 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
     <head>
-        <title>Botones Agregar</title>
         <meta charset="UTF-8">
+        <title>Botones Agregar</title>
     </head>
 
     <body>
@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">
-                        <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#agregarCliente">
+                        <a href="#" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#agregarCliente">
                             <i class="fas fa-plus"></i> [[#{accion.agregar}]]
                         </a>
                     </div>
