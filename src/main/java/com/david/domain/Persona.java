@@ -35,7 +35,7 @@ public class Persona implements Serializable {
     @Email
     private String email;
 
-    @Pattern(regexp = "^\\+?[1-9]\\d{1,9}$", message = "debe ser un teléfono con formato correcto")
+    @Pattern(regexp = "^$|^\\+?[1-9]\\d{1,9}$", message = "debe ser un teléfono con formato correcto")
     private String telefono;
 
     @NotNull
