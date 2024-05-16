@@ -9,3 +9,30 @@ ERRORES 403:
 2.Solución -> En la clase SecurityConfig, en el método filterChain añadimos en "formLogin" la siguiente línea:
             .defaultSuccessUrl("/", true)
 Esto hace que después de un inicio de sesión exitoso se redirigirá a los usuarios a esa ruta
+
+
+LANZAMIENTO DE TESTS:
+- Activar base de datos para test:
+1. Dependecias necesarias:
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>2.2.224</version>
+    <scope>test</scope>
+</dependency>
+2. Crear el application-test.properties en src/test/resources
+3. (IntelliJ IDEA) En Run -> Debug -> Edit configurations -> En el campo donde pone -ea, modificarlo para que quede así:
+    -ea -Dspring.profiles.active=test
+Si no sale este campo, pinchar en Modify options -> Add VM options
+4. En los tests añadir esta anotación:
+@ActiveProfiles("test")
