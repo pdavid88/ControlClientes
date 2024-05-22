@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 @Service("userDetailsService")
 @Slf4j
-public class UsurarioService implements UserDetailsService {
+public class UsuarioService implements UserDetailsService {
 
     @Autowired
     private IUsuarioDao usuarioDao;
